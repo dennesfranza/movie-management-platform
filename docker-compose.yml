@@ -7,21 +7,32 @@ services:
     volumes:
       - .:/app
       - media:/app/media
+      - static:/app/static
     ports:
       - "8000:8000"
     depends_on:
       - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    working_dir: /app
 
   redis:
-    image: redis:7
+    image: redis:6
+    ports:
+      - "6379:6379"
 
   celery:
     build: .
-    command: celery -A movie_project worker --loglevel=info
+    command: celery -A movie_project worker -l info
     volumes:
       - .:/app
+      - media:/app/media
     depends_on:
       - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    working_dir: /app
 
 volumes:
   media:
+  static:
