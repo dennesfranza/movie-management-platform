@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libpq-dev \
     python3-dev \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
