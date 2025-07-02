@@ -1,7 +1,7 @@
-Django==4.2
-djangorestframework==3.14.0
+Django
+djangorestframework
 gunicorn
-celery==5.3.1
-redis==5.0.1
+celery
+redis
 Pillow
 djangorestframework-simplejwt
