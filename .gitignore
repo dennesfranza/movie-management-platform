@@ -18,8 +18,6 @@ local_settings.py
 
 # Django media/static (if generated)
 media/
-static/
-staticfiles/
 
 # pip environment files
 pip-log.txt
