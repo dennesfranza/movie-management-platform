@@ -1,0 +1,86 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django related
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+*.sqlite3
+*.db
+.env
+.env.*
+local_settings.py
+
+# Django media/static (if generated)
+media/
+static/
+staticfiles/
+
+# pip environment files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+htmlcov/
+.coverage
+.tox/
+.nox/
+coverage.xml
+.cache
+pytest_cache/
+
+# Celery-related
+celerybeat-schedule
+celerybeat.pid
+
+# Migrations (optional, if you want to recreate each time)
+# **Uncomment only if you want to exclude migrations**
+# */migrations/
+# */migrations/*.py
+# */migrations/*.pyc
+
+# Docker
+*.pid
+*.sock
+*.log
+docker-compose.override.yml
+__docker_cache__/
+
+# Build artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# VSCode & PyCharm settings
+.vscode/
+.idea/
+*.iml
