@@ -8,7 +8,7 @@ A web platform that allows users to upload, manage, and stream movies using a Dj
 
 **Backend:**
 - Python 3.10
-- Django 4.2
+- Django
 - Django REST Framework (DRF)
 - Celery 5.x
 - Redis (as message broker)
@@ -18,8 +18,9 @@ A web platform that allows users to upload, manage, and stream movies using a Dj
 **Containerization:**
 - Docker + Docker Compose
 
-**Frontend (Planned/Placeholder):**
-- Angular (or React/Vue) — not included in this repo yet.
+- Used with `venv`. Just run for linux/mac
+```bash
+source venv/bin/activate
 
 ---
 
