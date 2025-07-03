@@ -21,6 +21,7 @@ A web platform that allows users to upload, manage, and stream movies using a Dj
 - Used with `venv`. Just run for linux/mac
 ```bash
 source venv/bin/activate
+```
 
 ---
 
