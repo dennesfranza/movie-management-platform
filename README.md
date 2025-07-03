@@ -41,3 +41,5 @@ A web platform that allows users to upload, manage, and stream movies using a Dj
 ```bash
 git clone https://github.com/yourusername/movie-management-platform.git
 cd movie-management-platform
+docker compose build
+docker compose up
