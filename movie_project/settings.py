@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-+$1+wigx=g%4q8lg44$2m-83us7#+5q!j51zy!8$+dge+ee$0*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+]
 
 
 # Application definition
@@ -44,14 +46,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'movie_project.urls'
@@ -140,5 +142,23 @@ REST_FRAMEWORK = {
 }
 
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'redis://localhost:6379/0')
-CORS_ALLOW_ALL_ORIGINS = True  # For development only!
-CORS_ALLOW_CREDENTIALS = True  # Allow cookies to be sent with cross-origin requests
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:9000",
+    "http://localhost:8080",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:9000",
+    "http://localhost:8080",
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+

@@ -16,3 +16,17 @@ class MovieViewSet(viewsets.ModelViewSet):
             generate_thumbnail.delay(movie.id)
         else:
             print(f"Video file not found yet: {video_path}")
+
+    def perform_update(self, serializer):
+        old_instance = self.get_object()
+        old_video_file = old_instance.video_file
+
+        movie = serializer.save()
+        new_video_file = movie.video_file
+
+        if old_video_file != new_video_file:
+            video_path = os.path.join(settings.MEDIA_ROOT, str(new_video_file))
+            if os.path.exists(video_path):
+                generate_thumbnail.delay(movie.id)
+            else:
+                print(f"Video file not found yet: {video_path}")
